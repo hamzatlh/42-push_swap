@@ -6,14 +6,9 @@
 #    By: htalhaou <htalhaou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/04 22:20:29 by htalhaou          #+#    #+#              #
-#    Updated: 2023/02/20 22:38:54 by htalhaou         ###   ########.fr        #
+#    Updated: 2023/02/14 17:06:47 by htalhaou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-
-
-
-
 
 SRCS = check_arguments.c \
 		main.c \

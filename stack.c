@@ -6,31 +6,31 @@
 /*   By: htalhaou <htalhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 22:56:22 by htalhaou          #+#    #+#             */
-/*   Updated: 2023/02/18 19:45:54 by htalhaou         ###   ########.fr       */
+/*   Updated: 2023/02/21 19:53:47 by htalhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void  push(t_list **top, int content)
+void  push(t_list **head, int content)
 {
-  t_list *node;
+  t_list *tmp;
   
-  node = ft_lstnew(content);
-  node->next = *top;
-  *top = node;
+  tmp = ft_lstnew(content);
+  tmp->next = *head;
+  *head = tmp;
 }
 
-int pop(t_list **top) 
+int pop(t_list **head) 
 {
   t_list *tmp;
   int result;
 
-  if (*top == NULL)
+  if (*head == NULL)
     return (-1);
-  tmp = *top;
+  tmp = *head;
   result = tmp->content;
-  *top = tmp->next;
+  *head = tmp->next;
   free(tmp);
   return (result);
 }
@@ -39,10 +39,10 @@ int peek(t_list **head)
 {
     if (*head == NULL)
       return -1;
-    return (*head)->content;
+    return ((*head)->content);
 }
 
-void fill_array_from_stack(t_list *stack_a, int *array, int size)
+void stack_to_array(t_list *stack_a, int *array, int size)
 {
   int i;
   int content;

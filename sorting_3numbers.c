@@ -6,16 +6,11 @@
 /*   By: htalhaou <htalhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 15:24:27 by htalhaou          #+#    #+#             */
-/*   Updated: 2023/02/16 18:13:35 by htalhaou         ###   ########.fr       */
+/*   Updated: 2023/02/21 19:02:52 by htalhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	sort_two_numbers(t_list **head_a)
-{
-	swap_a(head_a);
-}
 
 void	ft_sort_3numbers(t_list **head_a)
 {

@@ -6,7 +6,7 @@
 /*   By: htalhaou <htalhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 22:07:50 by htalhaou          #+#    #+#             */
-/*   Updated: 2023/02/20 22:10:09 by htalhaou         ###   ########.fr       */
+/*   Updated: 2023/02/21 20:17:08 by htalhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,28 +39,29 @@ int main(int ac, char **av)
 	size = ft_lstsize(a);
 	// ft_printf("the size of the stack is : %d\n", size);
 	arr = malloc(size * sizeof(int));
-	fill_array_from_stack(a, arr, size);
+	stack_to_array(a, arr, size);
 	sort_arr(arr, size);
 	// print_stacks(a, b);
 	if (size == 2)
-		sort_two_numbers(&a);
+		swap_a(&a);
 	else if (size == 3)
 		ft_sort_3numbers(&a);
 	else if (size == 5 || size == 4)
 		sort_five(&a, &b, size);
 	else if (is_descending_order(str))
 	{
-		sort_one_hundred(&a, &b, size, arr, size);
+		sort_one_or_five_hundred(&a, &b, size, arr, size);
+		sort_100_500(&a, &b, size);
 	}
 	else if (size > 5 && size <= 100)
 	{
-		sort_one_hundred(&a, &b, 15, arr, size);
-		sort_100(&a, &b, size);
+		sort_one_or_five_hundred(&a, &b, 15, arr, size);
+		sort_100_500(&a, &b, size);
 	}
 	else
 	{
-		sort_one_hundred(&a, &b, 40, arr, size);
-		sort_100(&a, &b, size);
+		sort_one_or_five_hundred(&a, &b, 40, arr, size);
+		sort_100_500(&a, &b, size);
 	}
 	// print_stacks(a, b);
 	return (0);
