@@ -6,7 +6,7 @@
 /*   By: htalhaou <htalhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 15:24:27 by htalhaou          #+#    #+#             */
-/*   Updated: 2023/02/21 19:02:52 by htalhaou         ###   ########.fr       */
+/*   Updated: 2023/02/25 17:17:49 by htalhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	ft_sort_3numbers(t_list **head_a)
 {
-    int a;
+	int	a;
 	int	b;
 	int	c;
 
-    a = (*head_a)->content;
-    b = (*head_a)->next->content;
-    c = (*head_a)->next->next->content;
+	a = (*head_a)->content;
+	b = (*head_a)->next->content;
+	c = (*head_a)->next->next->content;
 	if (a < c && b < a)
 		swap_a(head_a);
 	else if (a > b && b > c)

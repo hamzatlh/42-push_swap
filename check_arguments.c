@@ -6,7 +6,7 @@
 /*   By: htalhaou <htalhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 16:46:11 by htalhaou          #+#    #+#             */
-/*   Updated: 2023/02/14 16:39:19 by htalhaou         ###   ########.fr       */
+/*   Updated: 2023/02/25 18:04:00 by htalhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,21 @@ int	check_int(char **arr)
 	while (arr[i])
 	{
 		j = 0;
-		if((arr[i][j] == '-' && arr[i][j + 1] == '\0') || (arr[i][j] == '+' && arr[i][j + 1] == '\0'))
-			{
-				ft_putstr_fd("Error\n", 2);
-				exit(1);
-			}
- 		if (arr[i][j] == '-' || arr[i][j] == '+')
+		if ((arr[i][j] == '-' && arr[i][j + 1] == '\0')
+			|| (arr[i][j] == '+' && arr[i][j + 1] == '\0'))
+		{
+			ft_putstr_fd("Error\n", 2);
+			exit(1);
+		}
+		if (arr[i][j] == '-' || arr[i][j] == '+')
 			j++;
 		while (arr[i][j])
 		{
 			if (!(arr[i][j] >= '0' && arr[i][j] <= '9'))
-				return(0);
+				return (0);
 			j++;
 		}
-		i++;
+	i++;
 	}
 	return (1);
 }
@@ -75,34 +76,33 @@ int	check_range(char **arr)
 	return (1);
 }
 
-void check_argument(char **arr)
+void	check_argument(char **arr)
 {
-	if(!check_int(arr) || check_duplicate(arr) || !check_range(arr))
+	if (!check_int(arr) || check_duplicate(arr) || !check_range(arr))
 	{
 		ft_putstr_fd("Error\n", 1);
 		exit(1);
 	}
 }
 
-void split_and_join(char **av, char ***str)
+void	split_and_join(char **av, char ***str)
 {
-	int i;
-	char *joined_str;
+	int		i;
+	char	*joined_str;
 
 	joined_str = ft_strdup("");
 	i = 1;
 	while (av[i])
 	{
-		if(!empty(av[i]))
+		if (!empty(av[i]))
 		{
 			ft_putstr_fd("Error\n", 2);
 			exit(1);
 		}
-		joined_str = ft_strjoin_gnl( joined_str, av[i]);
+		joined_str = ft_strjoin_gnl(joined_str, av[i]);
 		joined_str = ft_strjoin_gnl(joined_str, " ");
 		i++;
 	}
 	*str = ft_split(joined_str, ' ');
 	check_argument(*str);
 }
-
