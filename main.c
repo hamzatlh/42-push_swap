@@ -6,11 +6,36 @@
 /*   By: htalhaou <htalhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 22:07:50 by htalhaou          #+#    #+#             */
-/*   Updated: 2023/02/25 18:01:19 by htalhaou         ###   ########.fr       */
+/*   Updated: 2023/03/01 00:01:40 by htalhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	sorting(t_list *a, t_list *b, int size, int *arr, char **str)
+{
+	if (size == 2)
+		swap_a(&a);
+	else if (size == 3)
+		ft_sort_3numbers(&a);
+	else if (size == 5 || size == 4)
+		sort_five(&a, &b, size);
+	else if (sorted_numbers_in_reverse(str))
+	{
+		sort_one_or_five_hundred(&a, &b, size, arr);
+		sort_100_500(&a, &b, size);
+	}
+	else if (size > 5 && size <= 100)
+	{
+		sort_one_or_five_hundred(&a, &b, 15, arr);
+		sort_100_500(&a, &b, size);
+	}
+	else
+	{
+		sort_one_or_five_hundred(&a, &b, 40, arr);
+		sort_100_500(&a, &b, size);
+	}
+}
 
 int	main(int ac, char **av)
 {
@@ -19,7 +44,6 @@ int	main(int ac, char **av)
 	int		size;
 	char	**str;
 	int		i;
-	int		j;
 	int		*arr;
 
 	i = 0;
@@ -37,32 +61,9 @@ int	main(int ac, char **av)
 		i--;
 	}
 	size = ft_lstsize(a);
-	// ft_printf("the size of the stack is : %d\n", size);
 	arr = malloc(size * sizeof(int));
 	stack_to_array(a, arr, size);
 	sort_arr(arr, size);
-	// print_stacks(a, b);
-	if (size == 2)
-		swap_a(&a);
-	else if (size == 3)
-		ft_sort_3numbers(&a);
-	else if (size == 5 || size == 4)
-		sort_five(&a, &b, size);
-	else if (sorted_numbers_in_reverse(str))
-	{
-		sort_one_or_five_hundred(&a, &b, size, arr, size);
-		sort_100_500(&a, &b, size);
-	}
-	else if (size > 5 && size <= 100)
-	{
-		sort_one_or_five_hundred(&a, &b, 15, arr, size);
-		sort_100_500(&a, &b, size);
-	}
-	else
-	{
-		sort_one_or_five_hundred(&a, &b, 40, arr, size);
-		sort_100_500(&a, &b, size);
-	}
-	// print_stacks(a, b);
+	sorting(a, b, size, arr, str);
 	return (0);
 }

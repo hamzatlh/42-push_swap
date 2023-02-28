@@ -6,7 +6,7 @@
 /*   By: htalhaou <htalhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 17:04:25 by htalhaou          #+#    #+#             */
-/*   Updated: 2023/02/25 17:11:03 by htalhaou         ###   ########.fr       */
+/*   Updated: 2023/02/28 23:27:20 by htalhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,39 +50,48 @@ void	sort_arr(int *arr, int size)
 	}
 }
 
-void	sort_one_or_five_hundred(t_list	**stack_a, t_list **stack_b, int end , int *arr, int size)
+void	sort_one_or_five_hundred(t_list	**stack_a, t_list **stack_b,
+	int end, int *arr)
 {
-	int	start;
-	int	j;
+	t_sat	pos;
+	int		size;
 
-	start = 0;
+	pos.start = 0;
+	pos.end = end;
+	size = ft_lstsize(*(stack_a));
 	while (*stack_a)
 	{
-		j = 0;
-		while (j < size)
+		pos.j = 0;
+		while (pos.j < size)
 		{
-			if ((*stack_a)->content == arr[j])
+			if ((*stack_a)->content == arr[pos.j])
 			{
-				if (j >= start && j <= end)
-				{
-					push_b(stack_a, stack_b);
-					start++;
-					end++;
-				}
-				else if (j < start)
-				{
-					push_b(stack_a, stack_b);
-					rotate_b(stack_b);
-					start++;
-					end++;
-				}
-				else if (j > end)
-					rotate_a(stack_a);
+				sort_main_function(stack_a, stack_b, arr, &pos);
 				break ;
 			}
-			j++;
+			pos.j++;
 		}
 	}
+}
+
+void	sort_main_function(t_list **stack_a, t_list **stack_b,
+					int *arr, t_sat *pos)
+{
+	if (pos->j >= pos->start && pos->j <= pos->end)
+	{
+		push_b(stack_a, stack_b);
+		pos->start += 1;
+		pos->end += 1;
+	}
+	else if (pos->j < pos->start)
+	{
+		push_b(stack_a, stack_b);
+		rotate_b(stack_b);
+		pos->start += 1;
+		pos->end += 1;
+	}
+	else if (pos->j > pos->end)
+		rotate_a(stack_a);
 }
 
 void	sort_100_500(t_list **stack_a, t_list **stack_b, int size)

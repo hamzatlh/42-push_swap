@@ -6,7 +6,7 @@
 /*   By: htalhaou <htalhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 16:46:35 by htalhaou          #+#    #+#             */
-/*   Updated: 2023/02/25 17:23:59 by htalhaou         ###   ########.fr       */
+/*   Updated: 2023/03/01 00:01:25 by htalhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,15 @@
 # include <limits.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+typedef struct s_sat
+{
+	int		end;
+	int		start;
+	int		j;
+	t_list	*a;
+	t_list	*b;
+}t_sat;
 
 // utils : 
 void	split_and_join(char **av, char ***str);
@@ -44,9 +53,12 @@ void	rrr(t_list **head_a, t_list **head_b);
 // sorting :
 void	ft_sort_3numbers(t_list **head_a);
 void	sort_five(t_list **stack_a, t_list **stack_b, int size);
-void	sort_one_or_five_hundred(t_list	**stack_a, t_list **stack_b, int end, int *arr, int size);
-void	sort_main_function(t_list **stack_a, t_list **stack_b, int end, int *arr, int size);
+void	sort_one_or_five_hundred(t_list	**stack_a, t_list **stack_b,
+			int end, int *arr);
+void	sort_main_function(t_list **stack_a, t_list **stack_b,
+			int *arr, t_sat *pos);
 void	sort_100_500(t_list **stack_a, t_list **stack_b, int size);
+void	sorting(t_list *a, t_list *b, int size, int *arr, char **str);
 
 // stack :
 void	push(t_list **top, int content);

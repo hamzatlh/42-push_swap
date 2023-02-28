@@ -6,7 +6,7 @@
 /*   By: htalhaou <htalhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 16:46:11 by htalhaou          #+#    #+#             */
-/*   Updated: 2023/02/25 18:04:00 by htalhaou         ###   ########.fr       */
+/*   Updated: 2023/02/28 15:28:42 by htalhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	check_duplicate(char **arr)
 	j = i + 1;
 		while (arr[j])
 		{
-			if (strcmp(arr[i], arr[j]) == 0)
+			if (ft_atoi(arr[j]) == ft_atoi(arr[i]))
 				return (1);
 			j++;
 		}
