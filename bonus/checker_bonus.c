@@ -6,7 +6,7 @@
 /*   By: htalhaou <htalhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 22:07:50 by htalhaou          #+#    #+#             */
-/*   Updated: 2023/03/03 17:56:10 by htalhaou         ###   ########.fr       */
+/*   Updated: 2023/03/03 21:12:58 by htalhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	more_func(t_sat fun, char *app)
 		else
 			break ;
 	}
-	if (is_sorted_arr(fun.a) && !fun.b)
+	if (fun.a && is_sorted_arr(fun.a) && !fun.b)
 		ft_putstr_fd("OK\n", 1);
 	else
 		ft_putstr_fd("KO\n", 1);
@@ -74,13 +74,11 @@ int	main(int ac, char **av)
 	fun.i = 0;
 	fun.a = 0;
 	fun.b = 0;
-	if (ac < 1)
+	if (ac == 1)
 		exit(1);
 	split_and_join(av, &str);
 	while (str[fun.i])
 		fun.i++;
-	if (sorted_numbers(str))
-		return (0);
 	fun.i--;
 	while (fun.i >= 0)
 	{

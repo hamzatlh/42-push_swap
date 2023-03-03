@@ -6,7 +6,7 @@
 /*   By: htalhaou <htalhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 16:46:11 by htalhaou          #+#    #+#             */
-/*   Updated: 2023/03/03 16:54:47 by htalhaou         ###   ########.fr       */
+/*   Updated: 2023/03/03 22:37:53 by htalhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	check_duplicate(char **arr)
 	i = 0;
 	while (arr[i])
 	{
-	j = i + 1;
+		j = i + 1;
 		while (arr[j])
 		{
 			if (ft_atoi(arr[j]) == ft_atoi(arr[i]))
@@ -68,7 +68,7 @@ int	check_range(char **arr)
 	i = 0;
 	while (arr[i])
 	{
-	tmp = ft_atoi(arr[i]);
+		tmp = ft_atoi(arr[i]);
 		if (tmp < INT_MIN || tmp > INT_MAX)
 			return (0);
 		i++;

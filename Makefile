@@ -6,7 +6,7 @@
 #    By: htalhaou <htalhaou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/04 22:20:29 by htalhaou          #+#    #+#              #
-#    Updated: 2023/03/03 17:57:59 by htalhaou         ###   ########.fr        #
+#    Updated: 2023/03/03 22:51:17 by htalhaou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,14 +15,14 @@ SRCS = check_arguments.c \
 		opration.c \
 		operation_utils.c \
 		operation_utils_ab.c \
-		ascending.c \
+		check_args.c \
 		stack.c \
 		sorting_3numbers.c \
 		sort_five.c \
 		sort_100.c \
 
 SRCS_BONUS = bonus/checker_bonus.c \
-		bonus/ascending_bonus.c \
+		bonus/check_args_bonus.c \
 		bonus/check_arguments_bonus.c \
 		bonus/operation_utils_bonus.c \
 		bonus/operation_utils_ab_bonus.c \
@@ -49,22 +49,22 @@ RM = rm -f
 all = $(NAME)
 
 $(NAME):$(OBJS)
-	@make -C ./li/
-	@make bonus -C ./li/
-	$(CC) $(CFLAGS) $(OBJS) li/libft.a -o $(NAME)
+	@make -C ./libft/
+	@make bonus -C ./libft/
+	$(CC) $(CFLAGS) $(OBJS) libft/libft.a -o $(NAME)
 
 bonus:$(NAME_BONUS)
 
 $(NAME_BONUS):$(OBJS_BONUS)
-	@make -C ./li/
-	@make bonus -C ./li/
-	$(CC) $(CFLAGS) $(OBJS_BONUS)  li/libft.a -o $(NAME_BONUS)
+	@make -C ./libft/
+	@make bonus -C ./libft/
+	$(CC) $(CFLAGS) $(OBJS_BONUS)  libft/libft.a -o $(NAME_BONUS)
 
 clean:
-	$(RM) $(OBJS) $(OBJS_BONUS) $(NAME) $(NAME_BONUS)
+	$(RM) $(OBJS) $(OBJS_BONUS)
 
 fclean: clean
-	@make fclean -C li/
+	@make fclean -C libft/
 	$(RM) $(OBJS) $(NAME) $(OBJS_BONUS) $(NAME_BONUS)
 
 re:fclean all

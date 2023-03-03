@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ascending_bonus.c                                  :+:      :+:    :+:   */
+/*   ascending.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htalhaou <htalhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 20:14:05 by htalhaou          #+#    #+#             */
-/*   Updated: 2023/03/03 17:32:21 by htalhaou         ###   ########.fr       */
+/*   Updated: 2023/03/03 22:27:06 by htalhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_bonus.h"
+#include "push_swap.h"
 
 int	sorted_numbers(char **arr)
 {
@@ -54,17 +54,4 @@ int	empty(char *str)
 		i++;
 	}
 	return (0);
-}
-
-int	is_sorted_arr(t_list *a)
-{
-	int	tmp;
-
-	while (a->next)
-	{
-		if (a->content > a->next->content)
-			return (0);
-		a = a->next;
-	}
-	return (1);
 }

@@ -6,14 +6,14 @@
 /*   By: htalhaou <htalhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 19:37:17 by htalhaou          #+#    #+#             */
-/*   Updated: 2023/03/03 17:55:00 by htalhaou         ###   ########.fr       */
+/*   Updated: 2023/03/03 22:25:00 by htalhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_BONUS_H
 # define PUSH_SWAP_BONUS_H
 
-# include "../li/libft.h"
+# include "../libft/libft.h"
 # include <unistd.h>
 # include <limits.h>
 # include <stdlib.h>
