@@ -6,7 +6,7 @@
 /*   By: htalhaou <htalhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 16:46:35 by htalhaou          #+#    #+#             */
-/*   Updated: 2023/03/01 16:46:52 by htalhaou         ###   ########.fr       */
+/*   Updated: 2023/03/03 17:24:14 by htalhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	sort_one_or_five_hundred(t_list	**stack_a, t_list **stack_b,
 void	sort_main_function(t_list **stack_a, t_list **stack_b,
 			int *arr, t_sat *pos);
 void	sort_100_500(t_list **stack_a, t_list **stack_b, int size);
-void	sorting(t_list *a, t_list *b, int size, int *arr);
+void	sorting(t_sat fun, int size, int *arr, char **str);
 
 // stack :
 void	push(t_list **top, int content);

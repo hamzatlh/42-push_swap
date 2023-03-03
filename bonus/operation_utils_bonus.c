@@ -6,7 +6,7 @@
 /*   By: htalhaou <htalhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 23:47:58 by htalhaou          #+#    #+#             */
-/*   Updated: 2023/03/02 21:29:14 by htalhaou         ###   ########.fr       */
+/*   Updated: 2023/03/03 17:56:30 by htalhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	rotate_a(t_list **head_a)
 	ft_lstadd_front(head_a, ft_lstnew(v));
 	while (temp)
 		ft_lstadd_front(head_a, ft_lstnew(pop(&temp)));
-	// ft_printf("ra\n");
 }
 
 void	rotate_b(t_list **head_b)
@@ -43,7 +42,6 @@ void	rotate_b(t_list **head_b)
 	ft_lstadd_front(head_b, ft_lstnew(v));
 	while (temp)
 		ft_lstadd_front(head_b, ft_lstnew(pop(&temp)));
-	// ft_printf("rb\n");
 }
 
 void	reverse_rotate_a(t_list **head_a)
@@ -60,7 +58,6 @@ void	reverse_rotate_a(t_list **head_a)
 	current->next = NULL;
 	temp->next = *head_a;
 	*head_a = temp;
-	// ft_printf("rra\n");
 }
 
 void	reverse_rotate_b(t_list **head_b)
@@ -77,5 +74,4 @@ void	reverse_rotate_b(t_list **head_b)
 	current->next = NULL;
 	temp->next = *head_b;
 	*head_b = temp;
-	// ft_printf("rrb\n");
 }

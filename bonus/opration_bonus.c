@@ -6,7 +6,7 @@
 /*   By: htalhaou <htalhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 23:08:53 by htalhaou          #+#    #+#             */
-/*   Updated: 2023/03/02 21:28:48 by htalhaou         ###   ########.fr       */
+/*   Updated: 2023/03/03 17:56:41 by htalhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void	swap_a(t_list **head_a)
 	*head_a = (*head_a)->next;
 	tmp->next = (*head_a)->next;
 	(*head_a)->next = tmp;
-	// ft_printf("sa\n");
 }
 
 void	swap_b(t_list **head_b)
@@ -35,7 +34,6 @@ void	swap_b(t_list **head_b)
 	*head_b = (*head_b)->next;
 	tmp->next = (*head_b)->next;
 	(*head_b)->next = tmp;
-	// ft_printf("sb\n");
 }
 
 void	push_a(t_list **head_a, t_list **head_b)
@@ -48,7 +46,6 @@ void	push_a(t_list **head_a, t_list **head_b)
 	*head_b = (*head_b)->next;
 	temp->next = *head_a;
 	*head_a = temp;
-	// ft_printf("pa\n");
 }
 
 void	push_b(t_list **head_a, t_list **head_b)
@@ -61,5 +58,4 @@ void	push_b(t_list **head_a, t_list **head_b)
 	*head_a = (*head_a)->next;
 	temp->next = *head_b;
 	*head_b = temp;
-	// ft_printf("pb\n");
 }

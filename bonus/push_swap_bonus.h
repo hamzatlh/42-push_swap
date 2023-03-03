@@ -6,7 +6,7 @@
 /*   By: htalhaou <htalhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 19:37:17 by htalhaou          #+#    #+#             */
-/*   Updated: 2023/03/02 21:11:07 by htalhaou         ###   ########.fr       */
+/*   Updated: 2023/03/03 17:55:00 by htalhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef struct s_sat
 // utils : 
 void	split_and_join(char **av, char ***str);
 int		sorted_numbers(char **arr);
-int		is_sorted_arr(int *arr, int size);
+int		is_sorted_arr(t_list *a);
 int		empty(char *str);
 int		max_value(t_list *head);
 int		pos(t_list *stack, int value);
@@ -57,5 +57,7 @@ void	stack_to_array(t_list *stack_a, int *array, int size);
 int		pop(t_list **top);;
 int		peek(t_list **top);
 void	push(t_list **top, int content);
+void	next_instr(char *app);
+void	more_func(t_sat fun, char *app);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: htalhaou <htalhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 16:46:11 by htalhaou          #+#    #+#             */
-/*   Updated: 2023/02/28 15:28:42 by htalhaou         ###   ########.fr       */
+/*   Updated: 2023/03/03 16:54:47 by htalhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,5 +104,6 @@ void	split_and_join(char **av, char ***str)
 		i++;
 	}
 	*str = ft_split(joined_str, ' ');
+	free (joined_str);
 	check_argument(*str);
 }

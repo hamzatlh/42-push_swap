@@ -6,7 +6,7 @@
 /*   By: htalhaou <htalhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 20:14:05 by htalhaou          #+#    #+#             */
-/*   Updated: 2023/03/02 21:10:53 by htalhaou         ###   ########.fr       */
+/*   Updated: 2023/03/03 17:32:21 by htalhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,20 +56,15 @@ int	empty(char *str)
 	return (0);
 }
 
-int	is_sorted_arr(int *arr, int size)
+int	is_sorted_arr(t_list *a)
 {
-	int	sorted;
-	int	i;
+	int	tmp;
 
-	i = 1;
-	while (i < size)
+	while (a->next)
 	{
-		if (arr[i] < arr[i - 1])
-		{
+		if (a->content > a->next->content)
 			return (0);
-			break ;
-		}
-		i++;
+		a = a->next;
 	}
 	return (1);
 }
