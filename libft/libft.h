@@ -6,7 +6,7 @@
 /*   By: htalhaou <htalhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 23:14:09 by htalhaou          #+#    #+#             */
-/*   Updated: 2023/02/11 21:40:12 by htalhaou         ###   ########.fr       */
+/*   Updated: 2023/03/06 21:15:30 by htalhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int		ft_isdigit(int c);
 int		ft_isprint(int c);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
-long		ft_atoi(const char *str);
+long	ft_atoi(const char *str);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
@@ -60,7 +60,7 @@ char	**ft_split(char const *s, char c);
 
 typedef struct s_list
 {
-	int			content;
+	int				content;
 	struct s_list	*next;
 }t_list;
 

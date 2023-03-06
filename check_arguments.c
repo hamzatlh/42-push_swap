@@ -6,7 +6,7 @@
 /*   By: htalhaou <htalhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 16:46:11 by htalhaou          #+#    #+#             */
-/*   Updated: 2023/03/03 22:37:53 by htalhaou         ###   ########.fr       */
+/*   Updated: 2023/03/06 14:31:22 by htalhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void	check_argument(char **arr)
 	if (!check_int(arr) || check_duplicate(arr) || !check_range(arr))
 	{
 		ft_putstr_fd("Error\n", 1);
-		exit(1);
+		exit_prog(arr);
 	}
 }
 
