@@ -6,7 +6,7 @@
 /*   By: htalhaou <htalhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 16:46:35 by htalhaou          #+#    #+#             */
-/*   Updated: 2023/03/03 22:25:00 by htalhaou         ###   ########.fr       */
+/*   Updated: 2023/03/06 13:08:11 by htalhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int		empty(char *str);
 int		max_value(t_list *head);
 int		pos(t_list *stack, int value);
 int		min_value(t_list *head);
+int		ft_strcmp(const char *s1, const char *s2);
 
 // operations :
 void	swap_a(t_list **head_a);

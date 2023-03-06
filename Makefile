@@ -6,7 +6,7 @@
 #    By: htalhaou <htalhaou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/04 22:20:29 by htalhaou          #+#    #+#              #
-#    Updated: 2023/03/03 22:51:17 by htalhaou         ###   ########.fr        #
+#    Updated: 2023/03/06 13:08:43 by htalhaou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ SRCS_BONUS = bonus/checker_bonus.c \
 		bonus/operation_utils_ab_bonus.c \
 		bonus/opration_bonus.c \
 		bonus/stack_bonus.c \
+		bonus/ft_strcmp.c
 		
 NAME = push_swap
 
