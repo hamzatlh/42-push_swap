@@ -6,7 +6,7 @@
 /*   By: htalhaou <htalhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 16:46:11 by htalhaou          #+#    #+#             */
-/*   Updated: 2023/03/06 14:31:22 by htalhaou         ###   ########.fr       */
+/*   Updated: 2023/03/07 21:44:38 by htalhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	check_int(char **arr)
 			|| (arr[i][j] == '+' && arr[i][j + 1] == '\0'))
 		{
 			ft_putstr_fd("Error\n", 2);
+			exit_prog(arr);
 			exit(1);
 		}
 		if (arr[i][j] == '-' || arr[i][j] == '+')
@@ -80,8 +81,9 @@ void	check_argument(char **arr)
 {
 	if (!check_int(arr) || check_duplicate(arr) || !check_range(arr))
 	{
-		ft_putstr_fd("Error\n", 1);
+		ft_putstr_fd("Error\n", 2);
 		exit_prog(arr);
+		exit (1);
 	}
 }
 
@@ -90,13 +92,14 @@ void	split_and_join(char **av, char ***str)
 	int		i;
 	char	*joined_str;
 
-	joined_str = ft_strdup("");
+	joined_str = NULL;
 	i = 1;
 	while (av[i])
 	{
 		if (!empty(av[i]))
 		{
 			ft_putstr_fd("Error\n", 2);
+			free (joined_str);
 			exit(1);
 		}
 		joined_str = ft_strjoin_gnl(joined_str, av[i]);

@@ -6,13 +6,13 @@
 /*   By: htalhaou <htalhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 22:07:50 by htalhaou          #+#    #+#             */
-/*   Updated: 2023/03/06 13:32:16 by htalhaou         ###   ########.fr       */
+/*   Updated: 2023/03/07 22:07:39 by htalhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
 
-void	instr(t_list **a, t_list **b, char *app)
+void	instr(t_list **a, t_list **b, char *app, char **str)
 {
 	if (strcmp(app, "rb\n") == 0)
 		rotate_b(b);
@@ -37,31 +37,44 @@ void	instr(t_list **a, t_list **b, char *app)
 	else if (strcmp(app, "rrr\n") == 0)
 		rrr(a, b);
 	else
-		next_instr(app);
-	free (app);
+		next_instr(a, b, app, str);
 }
 
-void	next_instr(char *app)
+void	next_instr(t_list **a, t_list **b, char *app, char **str)
 {
 	ft_putstr_fd("Error\n", 2);
-	exit (0);
 	free (app);
+	exit_prog(str);
+	ft_lstclear(a, &del);
+	ft_lstclear(b, &del);
+	exit (1);
 }
 
-void	more_func(t_sat fun, char *app)
+void	more_func(t_sat fun, char *app, char **str)
 {
 	while (1)
 	{
 		app = get_next_line(0);
 		if (app)
-			instr(&fun.a, &fun.b, app);
+		{
+			instr(&fun.a, &fun.b, app, str);
+			free (app);
+		}
 		else
 			break ;
 	}
 	if (fun.a && is_sorted_arr(fun.a) && !fun.b)
+	{
 		ft_putstr_fd("OK\n", 1);
+		ft_lstclear(&fun.a, &del);
+		ft_lstclear(&fun.b, &del);
+	}	
 	else
+	{
 		ft_putstr_fd("KO\n", 1);
+		ft_lstclear(&fun.a, &del);
+		ft_lstclear(&fun.b, &del);
+	}
 }
 
 int	main(int ac, char **av)
@@ -71,9 +84,7 @@ int	main(int ac, char **av)
 	char		*app;
 	int			*arr;
 
-	fun.i = 0;
-	fun.a = 0;
-	fun.b = 0;
+	init(&fun);
 	if (ac == 1)
 		exit(1);
 	split_and_join(av, &str);
@@ -85,6 +96,7 @@ int	main(int ac, char **av)
 		ft_lstadd_front(&fun.a, ft_lstnew(ft_atoi(str[fun.i])));
 		fun.i--;
 	}
-	more_func(fun, app);
+	more_func(fun, app, str);
+	exit_prog(str);
 	return (0);
 }

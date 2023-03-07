@@ -6,7 +6,7 @@
 #    By: htalhaou <htalhaou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/04 22:20:29 by htalhaou          #+#    #+#              #
-#    Updated: 2023/03/06 13:08:43 by htalhaou         ###   ########.fr        #
+#    Updated: 2023/03/07 21:51:35 by htalhaou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,7 @@ RM = rm -f
 %.o : %.c
 	@$(CC) $(CFLAGS) -c $< -o $@
 
-all = $(NAME)
+all:$(NAME)
 
 $(NAME):$(OBJS)
 	@make -C ./libft/
@@ -62,12 +62,13 @@ $(NAME_BONUS):$(OBJS_BONUS)
 	$(CC) $(CFLAGS) $(OBJS_BONUS)  libft/libft.a -o $(NAME_BONUS)
 
 clean:
+	@make fclean -C libft/
 	$(RM) $(OBJS) $(OBJS_BONUS)
 
 fclean: clean
 	@make fclean -C libft/
 	$(RM) $(OBJS) $(NAME) $(OBJS_BONUS) $(NAME_BONUS)
 
-re:fclean all
+re:fclean all bonus
 
 .PHONY:fclean all clean re

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ascending_bonus.c                                  :+:      :+:    :+:   */
+/*   check_args_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htalhaou <htalhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 20:14:05 by htalhaou          #+#    #+#             */
-/*   Updated: 2023/03/03 22:27:45 by htalhaou         ###   ########.fr       */
+/*   Updated: 2023/03/07 18:47:02 by htalhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +67,14 @@ int	is_sorted_arr(t_list *a)
 		a = a->next;
 	}
 	return (1);
+}
+
+void	exit_prog(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		free (str[i++]);
+	free(str);
 }

@@ -6,7 +6,7 @@
 /*   By: htalhaou <htalhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 19:37:17 by htalhaou          #+#    #+#             */
-/*   Updated: 2023/03/03 22:25:00 by htalhaou         ###   ########.fr       */
+/*   Updated: 2023/03/07 22:07:50 by htalhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,10 @@ int		empty(char *str);
 int		max_value(t_list *head);
 int		pos(t_list *stack, int value);
 int		min_value(t_list *head);
+void	exit_prog(char **str);
+int		ft_strcmp(const char *s1, const char *s2);
+void	del(int i);
+void	init(t_sat *fun);
 
 // operations :
 void	swap_a(t_list **head_a);
@@ -57,7 +61,6 @@ void	stack_to_array(t_list *stack_a, int *array, int size);
 int		pop(t_list **top);;
 int		peek(t_list **top);
 void	push(t_list **top, int content);
-void	next_instr(char *app);
-void	more_func(t_sat fun, char *app);
-
+void	next_instr(t_list **a, t_list **b, char *app, char **str);
+void	more_func(t_sat fun, char *app, char **str);
 #endif
