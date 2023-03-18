@@ -6,7 +6,7 @@
 /*   By: htalhaou <htalhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 23:47:58 by htalhaou          #+#    #+#             */
-/*   Updated: 2023/02/25 17:59:28 by htalhaou         ###   ########.fr       */
+/*   Updated: 2023/03/08 21:16:57 by htalhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,15 +49,15 @@ void	rotate_b(t_list **head_b)
 void	reverse_rotate_a(t_list **head_a)
 {
 	t_list	*temp;
-	t_list	*current;
+	t_list	*pos;
 
 	if (*head_a == NULL || (*head_a)->next == NULL)
 		return ;
-	current = *head_a;
-	while (current->next->next != NULL)
-		current = current->next;
-	temp = current->next;
-	current->next = NULL;
+	pos = *head_a;
+	while (pos->next->next != NULL)
+		pos = pos->next;
+	temp = pos->next;
+	pos->next = NULL;
 	temp->next = *head_a;
 	*head_a = temp;
 	ft_printf("rra\n");
@@ -66,15 +66,15 @@ void	reverse_rotate_a(t_list **head_a)
 void	reverse_rotate_b(t_list **head_b)
 {
 	t_list	*temp;
-	t_list	*current;
+	t_list	*pos;
 
 	if (*head_b == NULL || (*head_b)->next == NULL)
 		return ;
-	current = *head_b;
-	while (current->next->next != NULL)
-		current = current->next;
-	temp = current->next;
-	current->next = NULL;
+	pos = *head_b;
+	while (pos->next->next != NULL)
+		pos = pos->next;
+	temp = pos->next;
+	pos->next = NULL;
 	temp->next = *head_b;
 	*head_b = temp;
 	ft_printf("rrb\n");

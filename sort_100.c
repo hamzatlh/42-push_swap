@@ -6,7 +6,7 @@
 /*   By: htalhaou <htalhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 17:04:25 by htalhaou          #+#    #+#             */
-/*   Updated: 2023/02/28 23:27:20 by htalhaou         ###   ########.fr       */
+/*   Updated: 2023/03/11 21:00:03 by htalhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	max_value(t_list *head)
 	{
 		value = head->content;
 		if (value > max)
-		max = value;
+			max = value;
 		head = head->next;
 	}
 	return (max);
@@ -31,22 +31,24 @@ int	max_value(t_list *head)
 void	sort_arr(int *arr, int size)
 {
 	int	i;
-	int	tmp;
+	int	j;
+	int	temp;
 
-	size++;
-	while (--size)
+	i = 0;
+	while (i < size - 1)
 	{
-		i = 0;
-		while (i < size - 1)
+		j = 0;
+		while (j < size - i - 1)
 		{
-			if (arr[i] > arr[i + 1])
+			if (arr[j] > arr[j + 1])
 			{
-				tmp = arr[i];
-				arr[i] = arr[i + 1];
-				arr[i + 1] = tmp;
+				temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
 			}
-			i++;
+			j++;
 		}
+		i++;
 	}
 }
 

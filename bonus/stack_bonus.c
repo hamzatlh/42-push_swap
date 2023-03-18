@@ -6,7 +6,7 @@
 /*   By: htalhaou <htalhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 22:56:22 by htalhaou          #+#    #+#             */
-/*   Updated: 2023/03/03 17:57:09 by htalhaou         ###   ########.fr       */
+/*   Updated: 2023/03/09 18:14:26 by htalhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,6 @@ int	pop(t_list **head)
 	*head = tmp->next;
 	free(tmp);
 	return (result);
-}
-
-int	peek(t_list **head)
-{
-	if (*head == NULL)
-		return (-1);
-	return ((*head)->content);
 }
 
 void	stack_to_array(t_list *stack_a, int *array, int size)

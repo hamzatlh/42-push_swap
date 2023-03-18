@@ -6,7 +6,7 @@
 /*   By: htalhaou <htalhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 22:07:50 by htalhaou          #+#    #+#             */
-/*   Updated: 2023/03/07 20:13:45 by htalhaou         ###   ########.fr       */
+/*   Updated: 2023/03/14 17:01:48 by htalhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int	main(int ac, char **av)
 	int		*arr;
 
 	init(&fun);
-	if (ac < 1)
+	if (ac <= 1)
 		exit(1);
 	split_and_join(av, &str);
 	while (str[fun.i])
@@ -78,12 +78,11 @@ int	main(int ac, char **av)
 	}
 	fun.i--;
 	while (fun.i >= 0)
-	{
-		ft_lstadd_front(&fun.a, ft_lstnew(ft_atoi(str[fun.i])));
-		fun.i--;
-	}
+		ft_lstadd_front(&fun.a, ft_lstnew(ft_atoi(str[fun.i--])));
 	fun.size = ft_lstsize(fun.a);
 	arr = malloc(fun.size * sizeof(int));
+	if (!arr)
+		return (0);
 	next_oper(fun, arr, str);
 	return (0);
 }

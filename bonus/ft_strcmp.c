@@ -6,7 +6,7 @@
 /*   By: htalhaou <htalhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 13:04:37 by htalhaou          #+#    #+#             */
-/*   Updated: 2023/03/07 19:29:33 by htalhaou         ###   ########.fr       */
+/*   Updated: 2023/03/09 18:53:20 by htalhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_strcmp(const char *s1, const char *s2)
 	i = 0;
 	while (s1[i] && s2[i] && s1[i] == s2[i])
 		i++;
-	return (s1 - s2);
+	return (s1[i] - s2[i]);
 }
 
 void	del(int i)
