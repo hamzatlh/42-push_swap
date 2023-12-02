@@ -6,7 +6,7 @@
 /*   By: htalhaou <htalhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 22:07:50 by htalhaou          #+#    #+#             */
-/*   Updated: 2023/03/09 18:50:39 by htalhaou         ###   ########.fr       */
+/*   Updated: 2023/03/14 15:33:03 by htalhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,27 @@
 
 void	instr(t_list **a, t_list **b, char *app, char **str)
 {
-	if (ft_strcmp(app, "rb\n") == 0)
+	if (strcmp(app, "rb\n") == 0)
 		rotate_b(b);
-	else if (ft_strcmp(app, "ra\n") == 0)
+	else if (strcmp(app, "ra\n") == 0)
 		rotate_a(a);
-	else if (ft_strcmp(app, "sa\n") == 0)
+	else if (strcmp(app, "sa\n") == 0)
 		swap_a(a);
-	else if (ft_strcmp(app, "sb\n") == 0)
+	else if (strcmp(app, "sb\n") == 0)
 		swap_b(b);
-	else if (ft_strcmp(app, "rra\n") == 0)
+	else if (strcmp(app, "rra\n") == 0)
 		reverse_rotate_a(a);
-	else if (ft_strcmp(app, "rrb\n") == 0)
+	else if (strcmp(app, "rrb\n") == 0)
 		reverse_rotate_b(b);
-	else if (ft_strcmp(app, "pa\n") == 0)
+	else if (strcmp(app, "pa\n") == 0)
 		push_a(a, b);
-	else if (ft_strcmp(app, "pb\n") == 0)
+	else if (strcmp(app, "pb\n") == 0)
 		push_b(a, b);
-	else if (ft_strcmp(app, "rr\n") == 0)
+	else if (strcmp(app, "rr\n") == 0)
 		rr(a, b);
-	else if (ft_strcmp(app, "ss\n") == 0)
+	else if (strcmp(app, "ss\n") == 0)
 		ss(a, b);
-	else if (ft_strcmp(app, "rrr\n") == 0)
+	else if (strcmp(app, "rrr\n") == 0)
 		rrr(a, b);
 	else
 		next_instr(a, b, app, str);

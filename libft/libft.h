@@ -6,7 +6,7 @@
 /*   By: htalhaou <htalhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 23:14:09 by htalhaou          #+#    #+#             */
-/*   Updated: 2023/03/06 21:15:30 by htalhaou         ###   ########.fr       */
+/*   Updated: 2023/03/13 20:05:56 by htalhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 
 # include "get_next_line/get_next_line.h"
 # include "print/ft_printf.h"
-# include <string.h>
 # include <stdlib.h>
-# include <stdio.h>
 # include <unistd.h>
 
 int		ft_isalnum(int c);

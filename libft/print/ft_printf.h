@@ -6,15 +6,13 @@
 /*   By: htalhaou <htalhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 17:11:52 by htalhaou          #+#    #+#             */
-/*   Updated: 2022/10/23 21:13:24 by htalhaou         ###   ########.fr       */
+/*   Updated: 2023/03/13 20:06:11 by htalhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include <string.h>
-# include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdarg.h>

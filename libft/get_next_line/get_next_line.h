@@ -6,16 +6,15 @@
 /*   By: htalhaou <htalhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 13:13:56 by htalhaou          #+#    #+#             */
-/*   Updated: 2022/12/03 17:18:06 by htalhaou         ###   ########.fr       */
+/*   Updated: 2023/03/13 20:06:23 by htalhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# include<unistd.h>
-# include<stdio.h>
-# include<stdlib.h>
+# include <unistd.h>
+# include <stdlib.h>
 # include <fcntl.h>
 
 # ifndef BUFFER_SIZE

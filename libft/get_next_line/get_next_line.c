@@ -6,7 +6,7 @@
 /*   By: htalhaou <htalhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 13:13:52 by htalhaou          #+#    #+#             */
-/*   Updated: 2022/12/03 17:18:24 by htalhaou         ###   ########.fr       */
+/*   Updated: 2023/03/14 15:45:21 by htalhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*rff(int fd, char *reserve)
 
 	r = 1;
 	buf = malloc(sizeof(char) * BUFFER_SIZE + 1);
+	if (!buf)
+		return (NULL);
 	while (r > 0)
 	{	
 		r = read(fd, buf, BUFFER_SIZE);

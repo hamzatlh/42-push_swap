@@ -6,7 +6,7 @@
 /*   By: htalhaou <htalhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 20:03:28 by htalhaou          #+#    #+#             */
-/*   Updated: 2022/10/23 22:48:30 by htalhaou         ###   ########.fr       */
+/*   Updated: 2023/03/07 21:28:10 by htalhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_putnbr_base(unsigned int nb, int upper, int *count)
 		base = "0123456789ABCDEF";
 	else
 		base = "0123456789abcdef";
-	if (nb >= 0 && nb < 16)
+	if (nb < 16)
 	{
 		ft_putchar(base[nb], count);
 	}
